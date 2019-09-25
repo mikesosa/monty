@@ -4,12 +4,16 @@
 #include <string.h>
 #include "monty.h"
 
+/**
+ * push - push element into the stack
+ * @stack: stack given by main
+ * @line_cnt: ammount of lines
+ *
+ * Return: void
+ */
 void push(stack_t **stack, unsigned int line_cnt)
 {
 	char *n = global.argument;
-	
-	if(!stack)
-		exit(EXIT_FAILURE);
 
 	if (!n || !isdigit(*n))
 	{

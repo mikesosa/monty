@@ -4,7 +4,7 @@
 #include "monty.h"
 
 /**
- * error_usage: prints usage message and exits
+ * error_usage - prints usage message and exits
  *
  * Return: nothing
  */
@@ -15,7 +15,8 @@ void error_usage(void)
 }
 
 /**
- * error_usage: prints file error message and exits
+ * file_error - prints file error message and exits
+ * @argv: argv given by manin
  *
  * Return: nothing
  */
@@ -27,7 +28,9 @@ void file_error(char *argv)
 
 int status = 0;
 /**
- * main: entry point
+ * main - entry point
+ * @argv: list of arguments passed to our program
+ * @argc: ammount of args
  *
  * Return: nothing
  */

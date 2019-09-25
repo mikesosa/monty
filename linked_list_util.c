@@ -33,7 +33,7 @@ stack_t *add_node(stack_t **head, const int n)
 
 /**
  * print_stack - prints the contents of a stack_t stack
- * @h: list head
+ * @head: list head
  *
  * Return: number of elements of the list
  */
@@ -52,8 +52,8 @@ size_t print_stack(const stack_t *head)
 }
 
 /**
- * free_dlistint - frees a dlistint_t linked list
- * @head: list head
+ * free_stack - frees a dlistint_t linked list
+ * @stack: list head
  *
  * Return: void
  */
