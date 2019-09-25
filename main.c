@@ -54,11 +54,12 @@ int main(int argc, char **argv)
 			line_cnt++;
 			continue;
 		}
-
 		line_cnt++;
 		str = strtok(buffer, " \t\n");
 		opcode(&stack, str, line_cnt);
 	}
+	free(buffer);
+	free_stack(stack);
 	fclose(file);
 	exit(EXIT_SUCCESS);
 }
