@@ -54,9 +54,15 @@ int main(int argc, char **argv)
 			line_cnt++;
 			continue;
 		}
-		line_cnt++;
 		str = strtok(buffer, " \t\n");
+		if (!str)/*If reach null because no more tokens*/
+		{
+			line_cnt++;
+			continue;
+		}
+		global.argument = strtok(NULL, " \t\n"); /*store next string of the token*/
 		opcode(&stack, str, line_cnt);
+		line_cnt++;
 	}
 	free(buffer);
 	free_stack(stack);
