@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 	char *buffer = NULL; /*to store each line of the file*/
 	char *str = NULL; /*to save the argument*/
 	stack_t *stack = NULL;/*The double linked list*/
-	unsigned int line_cnt = 0; /*Line counter*/
+	unsigned int line_cnt = 1; /*Line counter*/
 
 	if (argc != 2)
 		error_usage();
