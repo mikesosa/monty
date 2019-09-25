@@ -11,14 +11,12 @@ void push(stack_t **stack, unsigned int line_cnt)
 	if (!isdigit(*n))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_cnt);
-		free_stack(*stack);
-		exit(EXIT_FAILURE);
+		status = EXIT_FAILURE;
 	}
 
 	if (!add_node(stack, atoi(n)))
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_stack(*stack);
-		exit(EXIT_FAILURE);
+		status = EXIT_FAILURE;
 	}
 }

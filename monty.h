@@ -44,6 +44,7 @@ typedef struct help
 } help;
 help global;
 
+extern int status;
 
 void push(stack_t **stack, unsigned int line_cnt);
 void pall(stack_t **stack, unsigned int line_cnt);

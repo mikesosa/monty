@@ -25,6 +25,7 @@ void file_error(char *argv)
 	exit(EXIT_FAILURE);
 }
 
+int status = 0;
 /**
  * main: entry point
  *
@@ -49,7 +50,9 @@ int main(int argc, char **argv)
 
 	while (getline(&buffer, &buf_len, file) != -1)
 	{
-		if(*buffer == '\n')/*If the line onl contains a new line char, ignore it*/
+		if (status)
+			break;
+		if (*buffer == '\n')/*If the line onl contains a new line char, ignore it*/
 		{
 			line_cnt++;
 			continue;
@@ -67,5 +70,5 @@ int main(int argc, char **argv)
 	free(buffer);
 	free_stack(stack);
 	fclose(file);
-	exit(EXIT_SUCCESS);
+	exit(status);
 }
