@@ -1,10 +1,7 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef MONTY_H
+#define MONTY_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
+#include <stddef.h> 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -40,5 +37,9 @@ void push(stack_t **stack, unsigned int line_cnt);
 void pall(stack_t **stack, unsigned int line_cnt);
 void opcode(stack_t **stack, char *str, unsigned int line_cnt);
 
+int isnumber(char *str);
 
-#endif
+stack_t *add_node(stack_t **head, const int n);
+size_t print_stack(const stack_t *head);
+
+#endif /* MONTY_H */
