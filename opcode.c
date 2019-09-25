@@ -18,7 +18,7 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 	{
 		cmp = malloc(sizeof(*cmp) * strlen(op[i].opcode) + 1);
 		memcpy(cmp, str, strlen(op[i].opcode));
-		cmp[strlen(cmp)] = 0;
+		cmp[strlen(op[i].opcode)] = 0;
 		if (strcmp(op[i].opcode, cmp) == 0)
 		{
 			op[i].f(stack, line_cnt);
