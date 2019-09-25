@@ -7,6 +7,9 @@
 void push(stack_t **stack, unsigned int line_cnt)
 {
 	char *n = global.argument;
+	
+	if(!stack)
+		exit(EXIT_FAILURE);
 
 	if (!n || !isdigit(*n))
 	{
