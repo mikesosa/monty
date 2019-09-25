@@ -1,8 +1,6 @@
 #include "monty.h"
 
-void pall(stack_t **stack, unsigned int line_cnt)
+void pall(stack_t **stack, unsigned int line_cnt __attribute__((unused)))
 {
-	(void)stack;
-	(void)line_cnt;
-	printf("Pall works\n");
+	print_stack(*stack);		
 }
