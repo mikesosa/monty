@@ -56,6 +56,5 @@ int isnumber(char *str);
 
 void add_node(stack_t **head, stack_t *new);
 void free_stack(stack_t **stack);
-size_t print_stack(const stack_t *head);
 
 #endif /* MONTY_H */

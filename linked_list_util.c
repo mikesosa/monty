@@ -29,26 +29,6 @@ void add_node(stack_t **head, stack_t *new)
 }
 
 /**
- * print_stack - prints the contents of a stack_t stack
- * @head: list head
- *
- * Return: number of elements of the list
- */
-size_t print_stack(const stack_t *head)
-{
-	size_t c = 0;
-
-	while (head)
-	{
-		printf("%d\n", head->n);
-		head = head->next;
-		c++;
-	}
-
-	return (c);
-}
-
-/**
  * free_stack - frees a dlistint_t linked list
  * @stack: list head
  *

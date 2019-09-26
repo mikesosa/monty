@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 #include "monty.h"
 
 /**
@@ -9,5 +13,12 @@
  */
 void pall(stack_t **stack, unsigned int line_cnt __attribute__((unused)))
 {
-	print_stack(*stack);
+	stack_t *tmp;
+
+	tmp = *stack; /* used a temp so stack isnt modified */
+	while (tmp) /* loop through until NULL, printing everything */
+	{
+		fprintf(stdout, "%d\n", tmp->n);
+		tmp = tmp->next;
+	}
 }
