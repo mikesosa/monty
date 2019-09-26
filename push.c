@@ -16,7 +16,9 @@ void push(stack_t **stack, unsigned int line_cnt)
 	char *n = global.argument;
 	stack_t *new;
 
-	if (isdigit(*n) == 0)
+	if (!stack) /* if we had no stack. this is diff than a !*stack */
+		exit(EXIT_FAILURE);
+	if (!n || (!isdigit(*n) && !(*n == '-' && isdigit(*(n + 1)))))
 	{
 		free_stack(stack);
 		fprintf(stderr, "L%d: usage: push integer\n", line_cnt);
