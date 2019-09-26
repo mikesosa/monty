@@ -30,6 +30,7 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 
