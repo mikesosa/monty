@@ -34,6 +34,17 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 		{NULL, NULL}
 	};
 
+	if (!strcmp(str, "stack"))
+	{
+		global.data_struct = 1;
+		return;
+	}
+	if (!strcmp(str, "queue"))
+	{
+		global.data_struct = 0;
+		return;
+	}
+
 	while (op[i].opcode)
 	{
 		if (strcmp(op[i].opcode, str) == 0)

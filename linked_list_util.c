@@ -3,6 +3,28 @@
 #include "monty.h"
 
 /**
+ * queue_node - queues a node 
+ * @head: head given by main
+ * @n: line count
+ *
+ * Return: new node
+ */
+stack_t *queue_node(stack_t **head, const int n)
+{
+	stack_t *new = malloc(sizeof(stack_t));
+
+	if (!new)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free(new);
+		return (NULL);
+	}
+	
+	TODO: JAVI QUEDA EN TUS MANOS
+	return (new);
+}
+
+/**
  * add_node - adds a node to the start of a stack_t stack
  * @head: list head
  * @n: number for the new node

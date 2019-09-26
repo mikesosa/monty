@@ -40,6 +40,7 @@ typedef struct instruction_s
 */
 typedef struct help
 {
+	int data_struct;
 	char *argument;
 } help;
 help global;
@@ -67,6 +68,7 @@ int is_digit(char *string);
 int isnumber(char *str);
 
 stack_t *add_node(stack_t **head, const int n);
+stack_t *queue_node(stack_t **head, const int n);
 void free_stack(stack_t *stack);
 size_t print_stack(const stack_t *head);
 

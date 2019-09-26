@@ -22,9 +22,19 @@ void push(stack_t **stack, unsigned int line_cnt)
 		return;
 	}
 
-	if (!add_node(stack, atoi(global.argument)))
+	if (global.data_struct == 0)
+	{	
+		if (!add_node(stack, atoi(global.argument)))
+		{
+			return;
+			status = EXIT_FAILURE;
+		}
+	} else
 	{
-		return;
-		status = EXIT_FAILURE;
+		if (!queue_node(stack, atoi(global.argument)))
+		{
+			return;
+			status = EXIT_FAILURE;
+		}
 	}
 }
