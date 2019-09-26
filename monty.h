@@ -52,6 +52,7 @@ void pint(stack_t **stack, unsigned int line_cnt);
 void swap(stack_t **stack, unsigned int line_cnt);
 void opcode(stack_t **stack, char *str, unsigned int line_cnt);
 
+int is_digit(char *string);
 int isnumber(char *str);
 
 stack_t *add_node(stack_t **head, const int n);
