@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_cnt)
 	char *n = global.argument;
 	stack_t *new;
 
-	if (!n || (!isdigit(*n) && !(*n == '-' && isdigit(*(n + 1)))))
+	if (isdigit(*n) == 0)
 	{
 		free_stack(stack);
 		fprintf(stderr, "L%d: usage: push integer\n", line_cnt);
