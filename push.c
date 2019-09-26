@@ -14,17 +14,20 @@
 void push(stack_t **stack, unsigned int line_cnt)
 {
 	char *n = global.argument;
+	stack_t *new;
 
 	if (!n || (!isdigit(*n) && !(*n == '-' && isdigit(*(n + 1)))))
 	{
+		free_stack(stack);
 		fprintf(stderr, "L%d: usage: push integer\n", line_cnt);
-		status = EXIT_FAILURE;
-		return;
+		exit(EXIT_FAILURE);
 	}
-
-	if (!add_node(stack, atoi(global.argument)))
+	new = malloc(sizeof(stack_t));
+	if (!new)
 	{
-		return;
-		status = EXIT_FAILURE;
+		free_stack(stack);
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
+	add_node(stack, new);
 }

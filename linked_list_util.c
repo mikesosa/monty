@@ -10,26 +10,22 @@
  * Return: newly created node, if creation fails, the
  * function will return NULL.
  */
-stack_t *add_node(stack_t **head, const int n)
+void add_node(stack_t **head, stack_t *new)
 {
-	stack_t *new = malloc(sizeof(stack_t));
-
-	if (!new)
+	new->n = atoi(global.argument);
+	if (!*head) /* no stack exist. add new as only element */
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		free(new);
-		return (NULL);
+		new->prev = NULL;
+		new->next = NULL;
+		*head = new;
 	}
-	new->n = n;
-
-	new->next = *head;
-	new->prev = NULL;
-	if (*head)
+	else
+	{ /* add new to the top! */
 		(*head)->prev = new;
-
-	*head = new;
-
-	return (new);
+		new->prev = NULL;
+		new->next = *head;
+		*head = new;
+	}
 }
 
 /**

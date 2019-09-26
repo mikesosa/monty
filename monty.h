@@ -54,7 +54,7 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt);
 
 int isnumber(char *str);
 
-stack_t *add_node(stack_t **head, const int n);
+void add_node(stack_t **head, stack_t *new);
 void free_stack(stack_t **stack);
 size_t print_stack(const stack_t *head);
 
