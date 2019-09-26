@@ -23,6 +23,7 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 		{"swap", swap},
 		{"nop", nop},
 		{"div", _div},
+		{"mul", _mul},
 		{"add", _add},
 		{"sub", _sub},
 		{"mod", mod},
