@@ -1,7 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#include <stddef.h> 
+#include <stddef.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -55,7 +55,7 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt);
 int isnumber(char *str);
 
 stack_t *add_node(stack_t **head, const int n);
-void free_stack(stack_t *stack);
+void free_stack(stack_t **stack);
 size_t print_stack(const stack_t *head);
 
 #endif /* MONTY_H */

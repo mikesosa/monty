@@ -70,8 +70,8 @@ int main(int argc, char **argv)
 		opcode(&stack, str, line_cnt);
 		line_cnt++;
 	}
+	free_stack(&stack);
 	free(buffer);
-	free_stack(stack);
 	fclose(file);
-	exit(status);
+	exit(EXIT_SUCCESS);
 }
