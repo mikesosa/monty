@@ -58,6 +58,7 @@ void _sub(stack_t **stack, unsigned int line_cnt);
 void _mul(stack_t **stack, unsigned int line_cnt);
 void mod(stack_t **stack, unsigned int line_cnt);
 void pchar(stack_t **stack, unsigned int line_cnt);
+void pstr(stack_t **stack, unsigned int line_cnt);
 void opcode(stack_t **stack, char *str, unsigned int line_cnt);
 
 int is_digit(char *string);
