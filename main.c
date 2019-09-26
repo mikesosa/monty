@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		str = strtok(buffer, " \t\n");
-		if (!str)/*If reach null because no more tokens*/
+		if (!str || *str == '#')
 		{
 			line_cnt++;
 			continue;
