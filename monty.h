@@ -18,7 +18,6 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -34,17 +33,18 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
-* struct help_struck - the arguments and other things we might need
+* struct help - argument for the current opcode
 * @argument: the arguments of the string
 *
 * Description: global structure used to pass data around the functions easily
 */
-typedef struct help_struck
+typedef struct help
 {
 	char *argument;
-} help_struck;
-help_struck global;
+} help;
+help global;
 
+extern int status;
 
 void push(stack_t **stack, unsigned int line_cnt);
 void pall(stack_t **stack, unsigned int line_cnt);
@@ -55,6 +55,7 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt);
 int isnumber(char *str);
 
 stack_t *add_node(stack_t **head, const int n);
+void free_stack(stack_t *stack);
 size_t print_stack(const stack_t *head);
 
 #endif /* MONTY_H */

@@ -4,7 +4,7 @@
 #include "monty.h"
 
 /**
- * error_usage: prints usage message and exits
+ * error_usage - prints usage message and exits
  *
  * Return: nothing
  */
@@ -15,7 +15,8 @@ void error_usage(void)
 }
 
 /**
- * error_usage: prints file error message and exits
+ * file_error - prints file error message and exits
+ * @argv: argv given by manin
  *
  * Return: nothing
  */
@@ -25,8 +26,11 @@ void file_error(char *argv)
 	exit(EXIT_FAILURE);
 }
 
+int status = 0;
 /**
- * main: entry point
+ * main - entry point
+ * @argv: list of arguments passed to our program
+ * @argc: ammount of args
  *
  * Return: nothing
  */
@@ -37,7 +41,7 @@ int main(int argc, char **argv)
 	char *buffer = NULL; /*to store each line of the file*/
 	char *str = NULL; /*to save the argument*/
 	stack_t *stack = NULL;/*The double linked list*/
-	unsigned int line_cnt = 0; /*Line counter*/
+	unsigned int line_cnt = 1; /*Line counter*/
 
 	if (argc != 2)
 		error_usage();
@@ -49,7 +53,9 @@ int main(int argc, char **argv)
 
 	while (getline(&buffer, &buf_len, file) != -1)
 	{
-		if(*buffer == '\n')/*If the line onl contains a new line char, ignore it*/
+		if (status)
+			break;
+		if (*buffer == '\n')/*If the line onl contains a new line char, ignore it*/
 		{
 			line_cnt++;
 			continue;
@@ -60,11 +66,12 @@ int main(int argc, char **argv)
 			line_cnt++;
 			continue;
 		}
-		printf("THIS IS THE STRING: %s\n", str);
-		global.argument = strtok(NULL, " \t\n");/*store next string of the token*/
+		global.argument = strtok(NULL, " \t\n"); /*store next string of the token*/
 		opcode(&stack, str, line_cnt);
 		line_cnt++;
 	}
+	free(buffer);
+	free_stack(stack);
 	fclose(file);
-	exit(EXIT_SUCCESS);
+	exit(status);
 }
