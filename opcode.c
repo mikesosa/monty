@@ -24,6 +24,7 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 		{"nop", nop},
 		{"div", _div},
 		{"add", _add},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 
