@@ -24,8 +24,7 @@ void push(stack_t **stack, unsigned int line_cnt)
 
 	if (!add_node(stack, atoi(global.argument)))
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		status = EXIT_FAILURE;
 		return;
+		status = EXIT_FAILURE;
 	}
 }
