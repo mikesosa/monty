@@ -14,7 +14,7 @@ void pstr(stack_t **stack, unsigned int line_cnt __attribute__((unused)))
 
 	while (current)
 	{
-		if (current->n == 0 || current->n > 127)
+		if (current->n <= 0 || current->n > 127)
 			break;
 		putchar((char) current->n);
 		current = current->next;
