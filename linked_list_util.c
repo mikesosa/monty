@@ -10,22 +10,46 @@
  * Return: newly created node, if creation fails, the
  * function will return NULL.
  */
-void add_node(stack_t **head, stack_t *new)
+stack_t *add_node(stack_t **head, const int n)
 {
-	new->n = atoi(global.argument);
-	if (!*head) /* no stack exist. add new as only element */
+	stack_t *new = malloc(sizeof(stack_t));
+
+	if (!new)
 	{
-		new->prev = NULL;
-		new->next = NULL;
-		*head = new;
+		fprintf(stderr, "Error: malloc failed\n");
+		free(new);
+		return (NULL);
 	}
-	else
-	{ /* add new to the top! */
+	new->n = n;
+
+	new->next = *head;
+	new->prev = NULL;
+	if (*head)
 		(*head)->prev = new;
-		new->prev = NULL;
-		new->next = *head;
-		*head = new;
+
+	*head = new;
+
+	return (new);
+}
+
+/**
+ * print_stack - prints the contents of a stack_t stack
+ * @head: list head
+ *
+ * Return: number of elements of the list
+ */
+size_t print_stack(const stack_t *head)
+{
+	size_t c = 0;
+
+	while (head)
+	{
+		printf("%d\n", head->n);
+		head = head->next;
+		c++;
 	}
+
+	return (c);
 }
 
 /**
@@ -34,18 +58,20 @@ void add_node(stack_t **head, stack_t *new)
  *
  * Return: void
  */
-void free_stack(stack_t **stack)
+void free_stack(stack_t *stack)
 {
-	stack_t *tmp;
+	stack_t *current = stack;
+	stack_t *next;
 
-	if (!stack)
-		return;
-
-	while (*stack)
+	if (stack)
 	{
-
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		next = stack->next;
+		while (current)
+		{
+			free(current);
+			current = next;
+			if (next)
+				next = next->next;
+		}
 	}
 }

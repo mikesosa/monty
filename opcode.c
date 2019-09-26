@@ -14,7 +14,7 @@
 void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 {
 	int i = 0;
-
+	
 	instruction_t op[] = {
 		{"push", push},
 		{"pall", pall},
@@ -33,6 +33,5 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_cnt, str);
-	free_stack(stack);
-	exit(EXIT_FAILURE);
+	status = EXIT_FAILURE;
 }

@@ -30,20 +30,17 @@ int is_digit(char *string)
 void push(stack_t **stack, unsigned int line_cnt)
 {
 	char *n = global.argument;
-	stack_t *new;
 
 	if ((is_digit(n)) == 0)
 	{
-		free_stack(stack);
 		fprintf(stderr, "L%d: usage: push integer\n", line_cnt);
-		exit(EXIT_FAILURE);
+		status = EXIT_FAILURE;
+		return;
 	}
-	new = malloc(sizeof(stack_t));
-	if (!new)
+
+	if (!add_node(stack, atoi(global.argument)))
 	{
-		free_stack(stack);
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		return;
+		status = EXIT_FAILURE;
 	}
-	add_node(stack, new);
 }
