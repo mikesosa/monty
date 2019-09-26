@@ -13,8 +13,6 @@
  */
 void _div(stack_t **stack, unsigned int line_cnt)
 {
-	int top_n = (*stack)->n;
-	int next_n = (*stack)->next->n;
 	int result;
 
 	if (!stack || !*stack || !((*stack)->next))
@@ -23,14 +21,14 @@ void _div(stack_t **stack, unsigned int line_cnt)
 		status = EXIT_FAILURE;
 		return;
 	}
-	if (top_n == 0)
+	if (((*stack)->n) == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_cnt);
 		status = EXIT_FAILURE;
 		return;
 	}
 
-	result = next_n / top_n;
+	result = ((*stack)->next->n) / ((*stack)->n);
 	pop(stack, line_cnt);/*For top node*/
 	(*stack)->n = result;
 }
