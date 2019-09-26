@@ -4,7 +4,8 @@
 
 /**
  * pstr - prints the contents of a stack_t stack as a string
- * @head: list head
+ * @stack: stack given by main
+ * @line_cnt: line counter for error messages
  *
  * Return: nothing
  */
