@@ -7,7 +7,7 @@
 /**
  * push - push element into the stack
  * @stack: stack given by main
- * @line_cnt: ammount ofhttps://github.com/mikesosa/monty/pull/7/conflict?name=push.c&ancestor_oid=f09070fea994d4cdb91dcdd7c23978b51699a6b8&base_oid=58445bf3bb72c9d46ab21db4b7b65ee4a95bdf01&head_oid=cd63ca58b33d7a2bbd9aa41861a121fea9339bd0 lines
+ * @line_cnt: ammount of lines
  *
  * Return: void
  */
