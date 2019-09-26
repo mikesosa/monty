@@ -20,7 +20,9 @@ stack_t *queue_node(stack_t **head, const int n)
 		return (NULL);
 	}
 	
-	TODO: JAVI QUEDA EN TUS MANOS
+	(void)n;
+	(void)head;
+	/*TODO: JAVI QUEDA EN TUS MANOS*/
 	return (new);
 }
 
