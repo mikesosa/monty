@@ -54,6 +54,7 @@ void pop(stack_t **stack, unsigned int line_cnt);
 void nop(stack_t **stack, unsigned int line_cnt);
 void _div(stack_t **stack, unsigned int line_cnt);
 void _add(stack_t **stack, unsigned int line_cnt);
+void _sub(stack_t **stack, unsigned int line_cnt);
 void mod(stack_t **stack, unsigned int line_cnt);
 void pchar(stack_t **stack, unsigned int line_cnt);
 void opcode(stack_t **stack, char *str, unsigned int line_cnt);
