@@ -23,13 +23,14 @@ void push(stack_t **stack, unsigned int line_cnt)
 	}
 
 	if (global.data_struct == 1)
-	{	
+	{
 		if (!add_node(stack, atoi(global.argument)))
 		{
 			return;
 			status = EXIT_FAILURE;
 		}
-	}else
+	}
+	else
 	{
 		if (!queue_node(stack, atoi(global.argument)))
 		{
