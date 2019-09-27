@@ -36,13 +36,13 @@ int status = 0;
  */
 int main(int argc, char **argv)
 {
-	FILE *file; /*File that wee neeed to read*/
-	size_t buf_len = 0; /*Lenght of the buffer*/
-	char *buffer = NULL; /*to store each line of the file*/
-	char *str = NULL; /*to save the argument*/
-	stack_t *stack = NULL;/*The double linked list*/
-	unsigned int line_cnt = 1; /*Line counter*/
-	
+	FILE *file;
+	size_t buf_len = 0;
+	char *buffer = NULL;
+	char *str = NULL;
+	stack_t *stack = NULL;
+	unsigned int line_cnt = 1;
+
 	global.data_struct = 1;
 	if (argc != 2)
 		error_usage();
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	{
 		if (status)
 			break;
-		if (*buffer == '\n')/*If the line onl contains a new line char, ignore it*/
+		if (*buffer == '\n')
 		{
 			line_cnt++;
 			continue;
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
 			line_cnt++;
 			continue;
 		}
-		global.argument = strtok(NULL, " \t\n"); /*store next string of the token*/
+		global.argument = strtok(NULL, " \t\n");
 		opcode(&stack, str, line_cnt);
 		line_cnt++;
 	}
