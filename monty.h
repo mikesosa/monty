@@ -32,8 +32,27 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+#define INSTRUCTIONS { \
+		{"push", push},\
+		{"pall", pall},\
+		{"pint", pint},\
+		{"pop", pop},\
+		{"swap", swap},\
+		{"nop", nop},\
+		{"div", _div},\
+		{"mul", _mul},\
+		{"add", _add},\
+		{"sub", _sub},\
+		{"mod", mod},\
+		{"pchar", pchar},\
+		{"pstr", pstr},\
+		{"rotl", rotl},\
+		{"rotr", rotr},\
+		{NULL, NULL} \
+	}
 /**
 * struct help - argument for the current opcode
+* @data_struct: stack mode, stack (default) and queue
 * @argument: the arguments of the string
 *
 * Description: global structure used to pass data around the functions easily
