@@ -42,7 +42,8 @@ int main(int argc, char **argv)
 	char *str = NULL; /*to save the argument*/
 	stack_t *stack = NULL;/*The double linked list*/
 	unsigned int line_cnt = 1; /*Line counter*/
-
+	
+	global.data_struct = 1;
 	if (argc != 2)
 		error_usage();
 
