@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
-* rotr - rotates the stack
-* @stack: given by main
-* @lineCount: for error messages but not used here
+* rotr - rotates the last node of a stack_t stack
+* @stack: stack head
+* @line_count: line count
 *
 * Return: void
 */
