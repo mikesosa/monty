@@ -78,29 +78,14 @@ We used malloc and free and are not allowed to use any other function from man m
 
 <hr>
 
-## Concepts
-
-The project consisted basically in 6 different webs each with a form for a voting system, voting for my id "833" as many times as they request it. 
-### As the following image I am voting for id "3" as a test:
-
-<hr>
-
-## Usage
-
-Every folder has a executable .py file, to run it you only have to type:
-
-
-
-<hr>
-
 <h3>
   Technologies Used
 </h3>
 <ul>
-  <li>Language: Python3, Bash</li>
+  <li>Language: C programming language, Bash</li>
   <li>Operating System: Ubuntu 14.04 LTS (Trusty64)</li>
-  <li>Style: Pep8</li>
-  <li>Compiler: No compiler needed</li>
+  <li>Style: berry</li>
+  <li>Compiler: gcc</li>
   <li>Version Control: Git</li>
 </ul>
 <hr>
